@@ -21,3 +21,8 @@ class get_onnx:
         onnx_model, _ = tf2onnx.convert.from_keras(model, opset=16)
         onnx.save(onnx_model, self.model_path + '.onnx')
         print('Complete Save : ', self.model_path + 'onnx')
+        
+if __name__ == '__main__':
+    input_path = input('>')
+    get_onnx(model_path = input_path)
+    print('Complete')
